@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revenue Command Centre — Gainsight CS</title>
+<script>
+  /* set the theme before first paint so there is no flash of the wrong one */
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('rcc-theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+        ? 'light' : 'dark';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#04121c" stroke-width="2.4"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Revenue <span>Command Centre</span></h1>
+        <div class="brand-sub" id="brandSub">GAINSIGHT CS &middot; LIVE MCP EXTRACT</div>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="pill"><span class="dot"></span>GAINSIGHT <b>CONNECTED</b></div>
+      <div class="pill">BASE <b id="homePill">LONDON</b></div>
+      <div class="pill" id="datePill">&mdash;</div>
+      <div class="hdr-actions">
+        <div class="siren-group">
+        <button class="siren-btn" id="sirenBtn" title="Raise the risk-renewal siren">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a5 5 0 0 0-5 5v4l-2 3h14l-2-3V8a5 5 0 0 0-5-5z"/>
+            <path d="M10 18a2 2 0 0 0 4 0"/><path d="M3 8 1.5 6.5M21 8l1.5-1.5M5 4 3.5 2.5M19 4l1.5-1.5"/>
+          </svg>
+          Siren
+        </button>
+        <button class="snd-sw" id="sndSw" title="Mute the siren" aria-label="Mute the siren"
+                aria-pressed="false">
+          <svg class="snd-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/>
+            <path d="M18.5 5.5a9 9 0 0 1 0 13"/>
+          </svg>
+          <svg class="snd-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m22 9-6 6M16 9l6 6"/>
+          </svg>
+        </button>
+        </div>
+      <div class="theme-sw" id="themeSw" role="group" aria-label="Colour theme">
+        <button data-theme-set="light" title="Light theme" aria-label="Light theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+        </button>
+        <button data-theme-set="dark" title="Dark theme" aria-label="Dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+          </svg>
+        </button>
+      </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== KPI strip ===== -->
+  <div class="kpis" id="kpis"></div>
+
+  <!-- ===== Globe ===== -->
+  <div class="section-hd">
+    <span class="idx">01</span>
+    <h2>Global Revenue Map</h2>
+    <span class="note" id="globeNote">Drag to rotate &middot; scroll to zoom &middot; click a market</span>
+  </div>
+  <div class="globe-grid">
+    <div class="panel globe-stage">
+      <canvas id="globe"></canvas>
+      <div class="globe-hint" id="globeHint"></div>
+      <div class="globe-mode">
+        <button class="mbtn on" data-mode="arr">ARR</button>
+        <button class="mbtn" data-mode="renewals">Renewals</button>
+        <button class="mbtn" data-mode="risk">Risk</button>
+      </div>
+      <div class="globe-legend" id="globeLegend"></div>
+      <div class="globe-ctl">
+        <button class="gbtn" id="zIn">+</button>
+        <button class="gbtn" id="zOut">&minus;</button>
+        <button class="gbtn" id="zRst" title="Reset view">&#8635;</button>
+      </div>
+      <div id="gtip"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-hd">Market concentration <span class="r" id="mktCount"></span></div>
+      <div class="mkt-list" id="mktList"></div>
+    </div>
+  </div>
+
+  <!-- ===== Risk spotlight ===== -->
+  <div class="section-hd">
+    <span class="idx">02</span>
+    <h2>Risk Renewal Near Me</h2>
+    <span class="note">Nearest renewal carrying an open Gainsight risk CTA</span>
+  </div>
+  <div class="spot" id="spot"></div>
+
+  <!-- ===== Risk register ===== -->
+  <div class="section-hd">
+    <span class="idx">03</span>
+    <h2>Risk Register &mdash; Click to Explore</h2>
+    <div class="reg-filters" id="regFilters">
+      <button class="mbtn on" data-reg="exposure">By exposure</button>
+      <button class="mbtn" data-reg="clock">By renewal clock</button>
+      <button class="mbtn" data-reg="near">By distance</button>
+    </div>
+  </div>
+  <div class="reg-grid" id="regGrid"></div>
+
+  <!-- ===== Visit planner ===== -->
+  <div class="section-hd">
+    <span class="idx">04</span>
+    <h2>Sites I Can Visit Before Renewal</h2>
+    <span class="note" id="visitNote"></span>
+  </div>
+  <div class="visit-grid" id="visitGrid"></div>
+
+  <!-- ===== Renewal timeline ===== -->
+  <div class="section-hd">
+    <span class="idx">05</span>
+    <h2>Renewal Runway</h2>
+    <span class="note">ARR up for renewal by month, split by Gainsight health</span>
+  </div>
+  <div class="panel"><div class="tl" id="tl"></div></div>
+
+  <footer id="footer"></footer>
+</div>
+
+<!-- ===== Account drawer ===== -->
+<div class="overlay" id="acctOverlay">
+  <div class="drawer">
+    <div class="dw-hd">
+      <div class="dw-hd-top">
+        <div style="min-width:0;flex:1">
+          <h3 id="dwName">&mdash;</h3>
+          <div class="dw-sub" id="dwSub"></div>
+        </div>
+        <button class="x" id="dwClose">&times;</button>
+      </div>
+      <div class="dw-tags" id="dwTags"></div>
+    </div>
+    <div class="dw-body">
+      <div class="dw-cols">
+        <div class="dw-col" id="dwLeft"></div>
+        <div class="dw-col" id="dwRight"></div>
+      </div>
+    </div>
+    <div class="dw-ft">
+      <button class="btn primary" id="dwSiren">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round"><path d="M12 3a5 5 0 0 0-5 5v4l-2 3h14l-2-3V8a5 5 0 0 0-5-5z"/>
+          <path d="M10 18a2 2 0 0 0 4 0"/></svg>
+        Raise siren
+      </button>
+      <button class="btn" id="dwCopyPlan">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        Copy action plan
+      </button>
+      <button class="btn" id="dwPrev">&larr; Prev risk</button>
+      <button class="btn" id="dwNext">Next risk &rarr;</button>
+      <div class="sp" id="dwFt"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Slack composer ===== -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-hd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#ff9aa8" stroke-width="2" style="width:22px;height:22px;flex:none"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3a5 5 0 0 0-5 5v4l-2 3h14l-2-3V8a5 5 0 0 0-5-5z"/><path d="M10 18a2 2 0 0 0 4 0"/>
+      </svg>
+      <div>
+        <h3>Risk Renewal Siren</h3>
+        <div class="sub">Review and edit before posting &mdash; nothing is sent until you confirm</div>
+      </div>
+      <button class="x" id="closeX">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label>Account</label>
+        <select class="sel" id="acctSel"></select>
+      </div>
+      <div class="field">
+        <label>Slack channel</label>
+        <select class="sel" id="chanSel">
+          <option value="C062PTGH4UD|#emea-renewals">#emea-renewals</option>
+          <option value="C01LXCRDR8A|#renewals">#renewals</option>
+          <option value="C023GCDC9JQ|#revops-renewals">#revops-renewals</option>
+          <option value="C083QTVCREW|#st-top50alerts">#st-top50alerts</option>
+          <option value="C08N7UMDGF5|#upcoming-auto-renew">#upcoming-auto-renew</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Message &mdash; editable</label>
+        <textarea class="ta" id="msgBox" spellcheck="false"></textarea>
+        <div class="hint" id="msgHint"></div>
+      </div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn primary" id="postBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        Post to Slack
+      </button>
+      <button class="btn" id="copyBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        Copy
+      </button>
+      <button class="btn" id="regenBtn">Regenerate</button>
+      <button class="btn" id="exploreBtn">Explore account</button>
+      <div class="sp" id="ftHint"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+{
+  "_note": "Gainsight CS company-level risk detail for the 29 accounts holding open risk CTAs. Pulled via MCP 2026-09-18. staircaseHealth/riskScore of 0 in Gainsight means 'not scored', and is normalised to null by build_data.py.",
+  "accounts": {
+    "Abbett": {
+      "riskSynopsis": "Executive sponsor disengaged after org restructuring. Support ticket volume up 3x in 90 days. Primary champion moved to a different business unit. No product adoption growth in 4 months.",
+      "renewalRiskSummary": "No major risks identified at this time",
+      "rootCause": "Abbett underwent a major org restructure in Dec 2025. The original executive sponsor (CFO) moved to an advisory role. The new leadership team has not been properly onboarded onto the platform and questions the ROI",
+      "customerSaid": "We're not sure this tool is being used enough to justify the cost. The new VP wants to see hard ROI numbers before renewal discussions",
+      "alreadyTried": "Conducted emergency EBR in Feb. Shared usage report and ROI framework. Offered complimentary admin training sessions — only 2 of 5 were attended",
+      "successDefinition": "Re-engage the new VP Operations as sponsor. Deliver ROI report showing $200K+ value. Achieve 55% weekly active usage across licensed seats. Get verbal renewal commitment by March 1st.",
+      "churnRiskLevel": "High", "sentiment": "Issues detected", "staircaseHealth": 27, "riskScore": null,
+      "stakeholderEngagement": "Multi-threaded", "execSponsor": "Alex Kim", "totalOpenCtas": 26,
+      "licensedUsers": 105, "activeUsers": 130, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "sally.mcfield.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Bremott": {
+      "riskSynopsis": "Key champion left the org. Engagement from remaining stakeholders has dropped 40% over 60 days. No executive sponsor identified",
+      "renewalRiskSummary": null,
+      "rootCause": "Loss of champion combined with delayed implementation of Phase 2. Customer expected API integration by Q1 which was not delivered",
+      "customerSaid": "Their new VP of Ops is evaluating competitors. They feel the product hasn't scaled with their needs.",
+      "alreadyTried": "EBR conducted in March. Offered professional services package for API integration. Scheduled product roadmap review",
+      "successDefinition": "Re-engage new VP sponsor. Complete API integration. Achieve 60%+ adoption across contracted seats. Secure verbal renewal commitment",
+      "churnRiskLevel": "Medium", "sentiment": "Issues detected", "staircaseHealth": 27, "riskScore": 49,
+      "stakeholderEngagement": "Multi-threaded", "execSponsor": "Alex Kim", "totalOpenCtas": 18,
+      "licensedUsers": null, "activeUsers": null, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "sally.mcfield.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Redmontis": {
+      "riskSynopsis": "Risk score at 40 driven by single-threaded engagement — all communication flows through Michael Chen. No executive sponsor involvement detected in recent interactions. Sentiment is positive but renewal conversations have not yet started with 81 days to renewal",
+      "renewalRiskSummary": "No major risks identified. Adoption is in progress. Single-threaded stakeholder engagement needs attention before renewal.",
+      "rootCause": "Account is operationally healthy (green health score, 81 days to renewal) but structurally fragile. Single-threaded dependency on Michael Chen creates continuity risk. No executive-level engagement since onboarding, and renewal/expansion conversations have not been initiated despite approaching renewal window",
+      "customerSaid": "Michael Chen has expressed satisfaction with platform performance and the data analytics team's adoption. No concerns raised directly, but executive sponsor Sarah Johnson (CTO) has not been engaged in recent QBRs or strategic conversations",
+      "alreadyTried": "CSM conducted regular check-ins with Michael Chen. Enablement sessions delivered for the data analytics team. Attempted to schedule EBR with executive sponsor but no confirmation received. Adoption audit completed showing core features in use but advanced capabilities underutilised",
+      "successDefinition": "Multi-threaded engagement established with at least two active stakeholders including executive sponsor Sarah Johnson. Renewal conversation initiated 60+ days before renewal date. Platform utilisation above 80% across licensed seats with adoption gaps on advanced features closed.",
+      "churnRiskLevel": null, "sentiment": "Neutral", "staircaseHealth": 44, "riskScore": null,
+      "stakeholderEngagement": null, "execSponsor": null, "totalOpenCtas": 12,
+      "licensedUsers": null, "activeUsers": 15, "lastQbr": "2026-06-09",
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": false, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "sally.mcfield.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Foster Buffalo Point of Sale": {
+      "sentiment": "Positive", "staircaseHealth": 66, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": true, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "brian.turner.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Wagner Data": {
+      "sentiment": null, "staircaseHealth": 20, "totalOpenCtas": 2, "lastQbr": null,
+      "signals": {"dark": true, "singleThreaded": true, "noMeetings": true, "noRenewalDiscussion": true, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "brian.turner.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Hughes Software": {
+      "sentiment": null, "staircaseHealth": 46, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "hannah.lee.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Harrin": {
+      "sentiment": "Positive", "staircaseHealth": 62, "totalOpenCtas": 10, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": true, "noExecComms": true},
+      "csmEmail": "sally.mcfield.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Trenford": {
+      "sentiment": "Issues detected", "staircaseHealth": 22, "totalOpenCtas": 4, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": false, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "sally.mcfield.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Morrison Oakmont Software": {
+      "sentiment": null, "staircaseHealth": 26, "totalOpenCtas": 2, "lastQbr": "2025-12-29",
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "grace.johnson.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Badger Asset Management": {
+      "sentiment": null, "staircaseHealth": 0, "riskScore": 0, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": true, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": true, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "brian.turner.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Belfast Glen Supply": {
+      "sentiment": "Positive", "staircaseHealth": 98, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": true, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "rebecca.goldstein.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Ivory Digital": {
+      "sentiment": "Neutral", "staircaseHealth": 47, "totalOpenCtas": 2, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "aisha.kapoor.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Prime Security Systems": {
+      "sentiment": null, "staircaseHealth": 0, "riskScore": 0, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": true, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "robert.white.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Murphy Otter Omnichannel": {
+      "sentiment": null, "staircaseHealth": 0, "riskScore": 0, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": true, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": true, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "brian.turner.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Dominguez Riverside Devices": {
+      "sentiment": null, "staircaseHealth": 20, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": true, "singleThreaded": true, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "robert.white.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Aerial Aspen Market": {
+      "sentiment": "Neutral", "staircaseHealth": 67, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": true, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "brian.turner.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Evergreen Commerce": {
+      "sentiment": null, "staircaseHealth": 0, "totalOpenCtas": 2, "lastQbr": "2025-12-22",
+      "signals": {"dark": true, "singleThreaded": true, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "stephanie.brown.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Chapman Cedarwood Genomics": {
+      "sentiment": null, "staircaseHealth": 36, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": true, "noMeetings": true, "noRenewalDiscussion": true, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "robert.white.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Le Cougar Nutrition": {
+      "sentiment": null, "staircaseHealth": 0, "riskScore": 0, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": true, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": true, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "brian.turner.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Sharma Knoll Lending": {
+      "sentiment": "Positive", "staircaseHealth": 84, "totalOpenCtas": 2, "lastQbr": "2025-10-13",
+      "signals": {"dark": false, "singleThreaded": true, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "rebecca.goldstein.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Pinewood Insurance": {
+      "sentiment": null, "staircaseHealth": 0, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": false, "slowResponses": false, "noExecComms": false},
+      "csmEmail": "zoe.davis.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Osprey Ridge Systems": {
+      "sentiment": null, "staircaseHealth": 0, "riskScore": 0, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": true, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "rebecca.goldstein.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Chung Rehab": {
+      "sentiment": null, "staircaseHealth": 0, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": false, "slowResponses": false, "noExecComms": false},
+      "csmEmail": "mark.oneill.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Lara Diagnostics": {
+      "sentiment": null, "staircaseHealth": 55, "totalOpenCtas": 2, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "hannah.lee.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Brookside Commerce": {
+      "sentiment": null, "staircaseHealth": 39, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "zoe.davis.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Gosling Ventures": {
+      "sentiment": null, "staircaseHealth": 45, "totalOpenCtas": 2, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "grace.johnson.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Aero Harbor Medical": {
+      "sentiment": null, "staircaseHealth": 0, "totalOpenCtas": 1, "lastQbr": "2026-02-22",
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": false, "slowResponses": false, "noExecComms": false},
+      "csmEmail": "hannah.lee.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Valiant Arbor Networks": {
+      "sentiment": "Positive", "staircaseHealth": 59, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": false, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "mark.oneill.brave_pioneer.staircase_ai@pedals-cloud.net"
+    },
+    "Rosales Technologies": {
+      "sentiment": null, "staircaseHealth": 55, "totalOpenCtas": 1, "lastQbr": null,
+      "signals": {"dark": false, "singleThreaded": false, "noMeetings": true, "noRenewalDiscussion": false, "stakeholderNotEngaged": true, "slowResponses": false, "noExecComms": true},
+      "csmEmail": "hannah.lee.brave_pioneer.staircase_ai@pedals-cloud.net"
+    }
+  }
+}
